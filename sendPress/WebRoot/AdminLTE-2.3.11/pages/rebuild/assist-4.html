@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../dist/css/rebuild/_demo.css">
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../dist/js/rebuild/assist-4.js"></script>
+<script src="../../dist/js/rebuild/utils.js"></script>
+<title>Title</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">修改密码</h3>
+			</div>
+			<!-- /.box-header -->
+			<form action="http://localhost:8080/sendPress/staffAction!modifyPasswd">
+			     <input type="password" required="true" name="oldpassword"placeholder="旧密码"> <br />
+				 <input id="password"name="newpassword" onblur="checkpas1();"   placeholder="新密码" required="true" type="password" /> <br /> 
+				 <input type="password" name="newpassword2" id="repassword" placeholder="确认新密码" required="true" onChange="checkpas();" /> <span class="tip" style="color: red;">两次输入的密码不一致</span><br>
+				 <button class="btn btn-success btn-lg" type="submit" name="submit" value="确认" onclick="checkpas2();">确认</button>
+			</form>
+			<script>
+				$(".tip").hide();
+				function checkpas1() { //当第一个密码框失去焦点时，触发checkpas1事件
+					var pas1 = document.getElementById("password").value;
+					var pas2 = document.getElementById("repassword").value; //获取两个密码框的值
+					if (pas1 != pas2 && pas2 != "") //此事件当两个密码不相等且第二个密码是空的时候会显示错误信息
+						$(".tip").show();
+					else
+						$(".tip").hide(); //若两次输入的密码相等且都不为空时，不显示错误信息。
+				}
+				function checkpas() { //当第一个密码框失去焦点时，触发checkpas2件
+					var pas1 = document.getElementById("password").value;
+					var pas2 = document.getElementById("repassword").value; //获取两个密码框的值
+					if (pas1 != pas2) {
+						$(".tip").show(); //当两个密码不相等时则显示错误信息
+					} else {
+						$(".tip").hide();
+					}
+				}
+				function checkpas2() { //点击提交按钮时，触发checkpas2事件，会进行弹框提醒以防无视错误信息提交
+					var pas3 = document.getElementById("password").value;
+					var pas4 = document.getElementById("repassword").value;
+					if (pas3 != pas4) {
+						alert("两次输入的密码不一致！");
+						return false;
+					}
+				}
+			</script>
+			<!-- /.box-footer -->
+		</div>
+	</div>
+</body>
+</html>

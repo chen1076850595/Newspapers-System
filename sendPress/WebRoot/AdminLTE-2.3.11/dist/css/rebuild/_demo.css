@@ -1,0 +1,41 @@
+body {
+	background-color: #ECF0F5;
+}
+
+#check1>li {
+	margin-right: 20px;
+	padding-top: 10px;
+	padding-buttom: 10px;
+	display: block;
+}
+
+#add-form {
+	
+}
+
+#add-form>td>input {
+	box-shadow: inset 1px 1px #999;
+	border: none;
+	padding: 0px;
+}
+
+#add-form>td {
+	
+}
+
+.edit-td {
+	border: 1px solid silver;
+	border-radius: 0.2rem;
+	padding: 4px;
+}
+
+#search-res td {
+	
+}
+
+.ChagngViewToUpdate {
+	box-shadow: inset 1px 1px #999;
+	border: none;
+	width: 100px;
+	padding: 0px;
+}

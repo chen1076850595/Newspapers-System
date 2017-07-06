@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../dist/css/rebuild/_demo.css">
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../dist/js/rebuild/person-2.js"></script>
+<script src="../../dist/js/rebuild/utils.js"></script>
+<title>Title</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">查询员工信息</h3>
+			</div>
+			<div class="box-header with-border">
+				<ul class="nav nav-tabs" id="check1" style="border-bottom:none ">
+					<li><h3 class="box-title">选择查询选项（多选）:</h3></li>
+				</ul>
+			</div>
+
+			<!-- /.box-header -->
+			<form action="" style="" id="search-form">
+				<div class="box-body" id="search-body">
+					<div class="input-group" id="search-body-group"></div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+					<button type="button" onclick="Search()"
+						class="btn btn-sm btn-info btn-flat pull-left">搜索</button>
+					<button type="button" onclick=""
+						class="btn btn-sm btn-default btn-flat pull-right">重置</button>
+				</div>
+				<!-- /.box-footer -->
+			</form>
+		</div>
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title" id="search-header">查询结果</h3>
+				<button type="button" onclick="Deletes()"
+					class="btn btn-sm btn-danger btn-flat pull-right">删除整页</button>
+				<!-- <a href="javascript:void(0)" onclick="" class="btn btn-default btn-sm"><i class="fa fa-refresh fa-spin"></i>刷新</a> -->
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+
+				<div class="table-responsive">
+					<table class="table no-margin" style="table-layout:fixed;">
+						<thead>
+							<tr id="search-res-head">
+							</tr>
+						</thead>
+						<tbody id="search-res">
+						</tbody>
+					</table>
+				</div>
+				<!-- /.table-responsive -->
+			</div>
+			<!-- /.box-body -->
+			<div class="box-footer clearfix" id="search-footer">
+
+				<button type="button" onclick="SelectResLast()"
+					class="btn btn-sm btn-info btn-flat pull-left">上一页</button>
+				<button type="button" onclick="SelectResNext()"
+					class="btn btn-sm btn-info btn-flat pull-right">下一页</button>
+				<div id="search-page"
+					style="width:30px;margin:0 auto;    font-weight: bolder;">- 1
+					-</div>
+			</div>
+			<!-- /.box-footer -->
+		</div>
+	</div>
+</body>
+<script>
+	initwindow();
+	Search();
+</script>
+</html>

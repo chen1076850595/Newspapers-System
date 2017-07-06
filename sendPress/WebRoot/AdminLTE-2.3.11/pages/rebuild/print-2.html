@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../dist/css/rebuild/_demo.css">
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../dist/js/rebuild/print-2.js"></script>
+<script src="../../dist/js/rebuild/utils.js"></script>
+<title>Title</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">打印分发单</h3>
+				<button type="button" class="btn btn-success btn-lg" onclick="print()" style="float:right">打印</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function print(){
+		$.ajax({
+			url:"http://localhost:8080/sendPress/printTotalNum",
+		})
+	}
+</script>
+</html>

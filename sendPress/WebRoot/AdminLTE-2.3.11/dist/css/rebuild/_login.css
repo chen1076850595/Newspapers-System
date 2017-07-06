@@ -1,0 +1,67 @@
+body {
+	/*background:url("../../../dist/img/rebuild/bg3.jpg");*/
+	font-family: "Microsoft YaHei Mono";
+}
+
+.logo {
+	/*     background-color:  rgba(30,141,188,0.3); */
+	padding: 20px 10px 10px 5px;
+	border-top-left-radius: 0rem;
+	border-top-right-radius: 5rem;
+	border-bottom-left-radius: 5rem;
+	border-bottom-right-radius: 0rem;
+	margin-bottom: 20px;
+}
+
+.logo>p {
+	text-align: right;
+}
+
+h1 {
+	margin-bottom: 40px;
+	font-family: "Microsoft YaHei Mono";
+	color: #025aa5;
+	text-align: center;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+form {
+	width: 310px;
+	margin: 0 auto;
+	padding: 5px;
+	/*background-color: rgba(30,141,188,0.3);*/
+	background-color: rgba(30, 141, 188, 0.3);
+	border-radius: 0.3rem;
+}
+
+.input1 {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.input2 {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.container {
+	margin-top: 80px;
+	padding-top: 40px;
+}
+
+#foot {
+	padding: 0px;
+}
+
+#footer {
+	width: inherit;
+	height: 95px;
+	/*     background-color: rgba(30,141,188,0.3); */
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #bbbbbb;
+	text-align: -webkit-center;
+	/*border-radius: 0.5rem;*/
+}

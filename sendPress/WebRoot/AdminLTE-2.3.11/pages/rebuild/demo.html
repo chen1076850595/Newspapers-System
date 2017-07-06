@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../dist/css/rebuild/_demo.css">
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../dist/js/rebuild/_demo.js"></script>
+<title>Title</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">查询版面信息</h3>
+			</div>
+			<div class="box-header with-border">
+				<ul class="nav nav-tabs" id="check1" style="border-bottom:none ">
+					<li><h3 class="box-title">选择查询选项（多选）:</h3></li>
+					<li><input type="checkbox" name="value-0">编号</li>
+					<li><input type="checkbox" name="value-1">报名</li>
+					<li><input type="checkbox" name="value-2">类型</li>
+					<li><input type="checkbox" name="value-3">页数</li>
+					<li><input type="checkbox" name="value-4">版高</li>
+					<li><input type="checkbox" name="value-5">版宽</li>
+					<li><input type="checkbox" name="value-6">主题</li>
+					<li><input type="checkbox" name="value-7">日期</li>
+					<li>
+						<button type="button" onclick="SetSearchItem()"
+							class="btn btn-sm btn-info btn-flat pull-right">确定</button>
+					</li>
+				</ul>
+			</div>
+
+			<!-- /.box-header -->
+			<form action="" style="" id="search-form">
+				<div class="box-body" id="search-body">
+					<div class="input-group">
+						<span class="input-group-addon" id="search-sp-0">编号</span> <input
+							type="text" class="form-control" id="search-in-0" name="id">
+						<span class="input-group-addon hidden" id="search-sp-1">报名</span>
+						<input type="text" class="form-control hidden" id="search-in-1"
+							name="newsPaper"> <span class="input-group-addon hidden"
+							id="search-sp-2">类型</span> <input type="text"
+							class="form-control hidden" id="search-in-2" name="type">
+						<span class="input-group-addon hidden" id="search-sp-3">页数</span>
+						<input type="text" class="form-control hidden" id="search-in-3"
+							name="pageNum"> <span class="input-group-addon hidden"
+							id="search-sp-4">版高</span> <input type="text"
+							class="form-control hidden" id="search-in-4" name="pageLength">
+						<span class="input-group-addon hidden" id="search-sp-5">版宽</span>
+						<input type="text" class="form-control hidden" id="search-in-5"
+							name="pageWidth"> <span class="input-group-addon hidden"
+							id="search-sp-6">主题</span> <input type="text"
+							class="form-control hidden" id="search-in-6" name="theme">
+						<span class="input-group-addon hidden" id="search-sp-7">日期</span>
+						<input type="text" class="form-control hidden" id="search-in-7"
+							name="theme">
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+					<button type="button" onclick="Search()"
+						class="btn btn-sm btn-info btn-flat pull-left">搜索</button>
+					<!-- 					<button type="button" onclick=""
+						class="btn btn-sm btn-default btn-flat pull-right">重置</button> -->
+				</div>
+				<!-- /.box-footer -->
+			</form>
+		</div>
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title" id="search-header">查询结果</h3>
+				<button type="button" onclick="Deletes()"
+					class="btn btn-sm btn-danger btn-flat pull-right">删除整页</button>
+				<!-- <a href="javascript:void(0)" onclick="" class="btn btn-default btn-sm"><i class="fa fa-refresh fa-spin"></i>刷新</a> -->
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+
+				<div class="table-responsive">
+					<table class="table no-margin" style="table-layout:fixed;">
+						<thead>
+							<tr>
+								<th style="width:10%">编号</th>
+								<th style="width:15%">报名</th>
+								<th style="width:10%">类型</th>
+								<th style="width:10%">页数</th>
+								<th style="width:10%">版高</th>
+								<th style="width:10%">版宽</th>
+								<th style="width:10%">风格</th>
+								<th style="width:13%">日期</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="search-res">
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- /.table-responsive -->
+			</div>
+			<!-- /.box-body -->
+			<div class="box-footer clearfix" id="search-footer">
+
+				<button type="button" onclick="SelectResLast()"
+					class="btn btn-sm btn-info btn-flat pull-left">上一页</button>
+				<button type="button" onclick="SelectResNext()"
+					class="btn btn-sm btn-info btn-flat pull-right">下一页</button>
+				<div id="search-page"
+					style="width:30px;margin:0 auto;    font-weight: bolder;">- 1
+					-</div>
+			</div>
+			<!-- /.box-footer -->
+		</div>
+		<div class="box box-info">
+			<div class="box-header with-border">
+				<h3 class="box-title">新增版面信息</h3>
+			</div>
+			<!-- /.box-header -->
+			<form action="">
+				<div class="box-body">
+
+					<div class="table-responsive">
+						<table class="table no-margin">
+							<thead>
+								<tr>
+									<th>报名</th>
+									<th>类型</th>
+									<th>页数</th>
+									<th>版高</th>
+									<th>版宽</th>
+									<th>风格</th>
+									<th>日期</th>
+								</tr>
+								<tr id="add-form">
+									<td><input type="text" name="name" id="add-in-0"></td>
+									<td><input type="text" name="type" id="add-in-1"></td>
+									<td><input type="text" name="pageNum" id="add-in-2"></td>
+									<td><input type="text" name="pageLength" id="add-in-3"></td>
+									<td><input type="text" name="pageWidth" id="add-in-4"></td>
+									<td><input type="text" name="theme" id="add-in-5"></td>
+									<td><input type="date" name="date" id="add-in-6"></td>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+					<button type="button" onclick="Add()"
+						class="btn btn-sm btn-info btn-flat pull-left">保存</button>
+					<!-- 					<button type="button" onclick="reset()"
+						class="btn btn-sm btn-default btn-flat pull-right">重置</button> -->
+				</div>
+			</form>
+			<!-- /.box-footer -->
+		</div>
+	</div>
+</body>
+<script>
+	Search();
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../dist/css/rebuild/_login.css">
+<script src="../../dist/js/rebuild/_login.js"></script>
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<title>Title</title>
+</head>
+<body>
+	<canvas id="Mycanvas" style="position:absolute;z-index:-11;"></canvas>
+	<div class="container">
+		<form class="align-content-center" action="http://localhost:8080/sendPress/staffAction!login">
+			<div class="logo">
+				<h1>分发管理系统</h1>
+				<p>——— Version 1.0</p>
+			</div>
+			<!--<h2>请登录后操作</h2>-->
+			<input type="email" class="input1 form-control"
+				placeholder="Email address" name="staff.account" id="account" required> <input type="password"
+				class="input2 form-control" placeholder="Password" name="staff.password" id="password" required>
+			<input type="checkbox" name="autologin" style="margin:20px auto 20px">Remember
+			me
+			<button type="button" onclick="loginn()" class="btn btn-lg btn-primary btn-block">Sign</button>
+		</form>
+	</div>
+	<div class="container-fluid navbar-fixed-bottom" id="foot">
+		<div id="footer">
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>联系站长：305670525@qq.com</td>
+				</tr>
+			</table>
+			<p>
+				Designed and built with all the love in the world by <a
+					href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a
+					href="https://twitter.com/fat" target="_blank">@fat</a>. Maintained
+				by the <a href="https://github.com/orgs/twbs/people">core team</a>
+				with the help of <a
+					href="https://github.com/twbs/bootstrap/graphs/contributors">our
+					contributors</a>.
+			</p>
+			<p>
+				当前版本 v1.0 demo。源码受 <a rel="license"
+					href="https://github.com/twbs/bootstrap/blob/master/LICENSE"
+					target="_blank">MIT</a> 版权协议保护，文档受 <a rel="license"
+					href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC
+					BY 3.0</a> 版权协议保护。
+			</p>
+		</div>
+	</div>
+	<script>
+    bg();
+</script>
+</body>
+</html>

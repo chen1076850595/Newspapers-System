@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="   
+  http://www.springframework.org/schema/aop     
+  http://www.springframework.org/schema/aop/spring-aop-2.5.xsd   
+  http://www.springframework.org/schema/beans     
+  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd   
+  http://www.springframework.org/schema/context   
+  http://www.springframework.org/schema/context/spring-context-2.5.xsd   
+  http://www.springframework.org/schema/tx     
+  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd" default-autowire="byName">
+	<context:annotation-config />
+	<context:component-scan base-package="*" />
+	
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url"
+			value="jdbc:mysql://123.206.183.37:3306/press?useUnicode=true&amp;characterEncoding=utf-8">
+		</property>
+		<property name="username" value="sendpress"></property>
+		<property name="password" value="330047"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	
+	
+		</bean>
+	<bean id="PrintPointDAO" class="com.press.dao.PrintPointDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NewspaperDAO" class="com.press.dao.NewspaperDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		
+		
+	</bean>
+	<bean id="SendPointDAO" class="com.press.dao.SendPointDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PointRelationDAO"
+		class="com.press.dao.PointRelationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BundleDAO" class="com.press.dao.BundleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RoadDAO" class="com.press.dao.RoadDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="RoadRelationDAO" class="com.press.dao.RoadRelationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+
+	<bean id="BusDAO" class="com.press.dao.BusDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="GroupRoadDAO" class="com.press.dao.GroupRoadDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StaffDAO" class="com.press.dao.StaffDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DepartmentDAO" class="com.press.dao.DepartmentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="JurisdictionDAO" class="com.press.dao.JurisdictionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="NoticeDAO" class="com.press.dao.NoticeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	</beans>
